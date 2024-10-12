@@ -1,0 +1,210 @@
+/* Start globel rules */
+:root {
+  --main-color: #2156f3;
+  --main-color-alt: #;
+  --main-transition: 0.3s;
+  --main-padding: 20px;
+  --secition-background: #eee;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.control-buttons {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #026ef39b;
+}
+.control-buttons span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: white;
+  background-color: #f01717;
+  padding: 15px 25px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.control-buttons span:hover {
+  background-color: #7a0000;
+}
+.info-container {
+  width: 1000px;
+  margin: 10px auto 0;
+  background-color: #f6f6f6;
+  padding: 10px;
+  font-size: 25px;
+  overflow: hidden;
+  border: 2px solid #0008f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-container .name {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.info-container .name span {
+  color: #0008f3;
+}
+.info-container .tries {
+  font-weight: bold;
+  span {
+    color: red;
+    font-weight: bold;
+  }
+}
+.memory-boxs-container {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+.memory-boxs-container.no-clicking {
+  pointer-events: none;
+}
+.memory-boxs-container .game-block {
+  height: 200px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 190px;
+  margin: 0 10px 10px;
+}
+.memory-boxs-container .game-block .front::before {
+  content: "?";
+  color: white;
+  font-size: 140px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+.memory-boxs-container .game-block .front {
+  background-color: #333;
+  line-height: 200px;
+}
+.memory-boxs-container .game-block .back {
+  background-color: #858585;
+  transform: rotateY(180deg);
+}
+.memory-boxs-container .back img {
+  width: 140px;
+  height: 140px;
+  margin: 30px;
+}
+/* @media (max-width: 676px) { */
+/* .memory-boxs-container .game-block { */
+/* width: 100px; */
+/* height: 100px; */
+/* } */
+/* .memory-boxs-container .game-block .front{ */
+/* line-height:50px; */
+/* } */
+/* .memory-boxs-container .game-block .front::before { */
+/* font-size: 90px; */
+/* } */
+/* } */
+.memory-boxs-container .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 5px solid #0008f3;
+}
+.memory-boxs-container .game-block.is-flipped,
+.memory-boxs-container .game-block.has-match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+@media (max-width: 676px) {
+  .memory-boxs-container {
+    width: 100%;
+    height: 100%;
+    /* margin: 10px auto; */
+    /* flex-direction: column; */
+    /* flex: 1; */
+    /* align-items: center; */
+  }
+  .memory-boxs-container .game-block {
+    width: 100px;
+    height: 100px;
+    flex: 0 0 100px;
+    margin: 5px;
+  }
+  .memory-boxs-container .game-block .front {
+    line-height: 100px;
+  }
+  .memory-boxs-container .game-block .front::before {
+    font-size: 50px;
+  }
+  .memory-boxs-container .back img {
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+  }
+}
