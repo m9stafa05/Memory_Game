@@ -20,13 +20,13 @@ A modern, responsive browser-based memory game where players flip cards to find 
 
 ---
 
-
 ## Usage
 
 1. **Start the Game:**
 
    - Click the "Start Game" button.
    - Enter your name when prompted (or leave blank for "Unknown").
+
 2. **How to Play:**
 
    - Click on any two cards to flip them.
